@@ -6,44 +6,49 @@
 
 using namespace std;
 
-class Difference {
-    private:
+class Difference
+{
+private:
     vector<int> elements;
-  
-  	public:
-  	int maximumDifference;
 
-	// Add your code here
-    	// Add your code here
-    Difference(vector<int> arr){
+public:
+    int maximumDifference;
+
+    // Add your code here
+    // Add your code here
+    Difference(vector<int> arr)
+    {
         elements = arr;
         sort(elements.begin(), elements.end());
     }
 
-    void computeDifference(){
-        
-        maximumDifference = abs(elements[elements.size()-1] - elements[0]);
+    void computeDifference()
+    {
+
+        maximumDifference = abs(elements[elements.size() - 1] - elements[0]);
     }
 }; // End of Difference class
 
-int main() {
+int main()
+{
     int N;
     cin >> N;
-    
+
     vector<int> a;
-    
-    for (int i = 0; i < N; i++) {
+
+    for (int i = 0; i < N; i++)
+    {
         int e;
         cin >> e;
-        
+
         a.push_back(e);
     }
-    
+
     Difference d(a);
-    
+
     d.computeDifference();
-    
+
     cout << d.maximumDifference;
-    
+
     return 0;
 }
